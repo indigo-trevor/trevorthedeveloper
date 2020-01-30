@@ -1,61 +1,45 @@
 $(document).ready(function() {
-  console.log("main.js loaded");
+    $(document).on("scroll", onScroll);
 
-  // START: Nav
-  // Init
-  $(function () {
-    $('.nav-wrapper').stickyNavbar({
-    activeClass: "active",          // Class to be added to highlight nav elements
-    sectionSelector: "scrollto",    // Class of the section that is interconnected with nav links
-    animDuration: 250,              // Duration of jQuery animation
-    startAt: 56,                     // Stick the menu at XXXpx from the top of the this() (nav container)
-    easing: "linear",               // Easing type if jqueryEffects = true, use jQuery Easing plugin to extend easing types - gsgd.co.uk/sandbox/jquery/easing
-    animateCSS: false,               // AnimateCSS effect on/off
-    animateCSSRepeat: false,        // Repeat animation everytime user scrolls
-    cssAnimation: "fadeInDown",     // AnimateCSS class that will be added to selector
-    jqueryEffects: false,           // jQuery animation on/off
-    jqueryAnim: "slideDown",        // jQuery animation type: fadeIn, show or slideDown
-    selector: "li",                  // Selector to which activeClass will be added, either "a" or "li"
-    mobile: true,                  // If false nav will not stick under 480px width of window
-    mobileWidth: 480,               // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due usability on mobile devices)
-    zindex: 9999,                   // The zindex value to apply to the element: default 9999, other option is "auto"
-    stickyModeClass: "sticky",      // Class that will be applied to 'this' in sticky mode
-    unstickyModeClass: "unsticky"   // Class that will be applied to 'this' in non-sticky mode
+    //smoothscroll
+    $('a[href^="#"]').on('click', function(e) {
+        e.preventDefault();
+        $(document).off("scroll");
+
+        $('a').each(function() {
+            $(this).removeClass('active');
+        })
+        $(this).addClass('active');
+
+        var target = this.hash,
+            menu = target;
+        $target = $(target);
+        $('html, body').stop().animate({
+            'scrollTop': $target.offset().top + 2
+        }, 500, 'swing', function() {
+            window.location.hash = target;
+            $(document).on("scroll", onScroll);
+        });
     });
-  });
 
-  // Reinit on resize
-  $( window ).resize(function() {
-    console.log("Window Resize");
-    $(function () {
-      $('.nav-wrapper').stickyNavbar({
-      activeClass: "active",          // Class to be added to highlight nav elements
-      sectionSelector: "scrollto",    // Class of the section that is interconnected with nav links
-      animDuration: 250,              // Duration of jQuery animation
-      startAt: 56,                     // Stick the menu at XXXpx from the top of the this() (nav container)
-      easing: "linear",               // Easing type if jqueryEffects = true, use jQuery Easing plugin to extend easing types - gsgd.co.uk/sandbox/jquery/easing
-      animateCSS: false,               // AnimateCSS effect on/off
-      animateCSSRepeat: false,        // Repeat animation everytime user scrolls
-      cssAnimation: "fadeInDown",     // AnimateCSS class that will be added to selector
-      jqueryEffects: false,           // jQuery animation on/off
-      jqueryAnim: "slideDown",        // jQuery animation type: fadeIn, show or slideDown
-      selector: "li",                  // Selector to which activeClass will be added, either "a" or "li"
-      mobile: true,                  // If false nav will not stick under 480px width of window
-      mobileWidth: 480,               // The viewport width (without scrollbar) under which stickyNavbar will not be applied (due usability on mobile devices)
-      zindex: 9999,                   // The zindex value to apply to the element: default 9999, other option is "auto"
-      stickyModeClass: "sticky",      // Class that will be applied to 'this' in sticky mode
-      unstickyModeClass: "unsticky"   // Class that will be applied to 'this' in non-sticky mode
+    // Squeeze
+      $(".hamburger--squeeze").on('click', function(){
+          $(".hamburger--squeeze").toggleClass("is-active");
+          $(".nav").toggleClass("is-active");
       });
-    });
-  });
-
-
-  // Squeeze
-    $(".hamburger--squeeze").click(function(){
-        $(".hamburger--squeeze").toggleClass("is-active");
-        $(".nav").toggleClass("is-active");
-    });
-
-  // END: Nav
 
 });
+
+function onScroll(event) {
+    var scrollPos = $(document).scrollTop();
+    $('.navbar-nav a').each(function() {
+        var currLink = $(this);
+        var refElement = $(currLink.attr("href"));
+        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+            $('.navbar-nav ul li a').removeClass("active");
+            currLink.addClass("active");
+        } else {
+            currLink.removeClass("active");
+        }
+    });
+}

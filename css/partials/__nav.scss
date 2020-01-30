@@ -150,15 +150,11 @@
           color: $black;
           text-decoration: none;
           position: relative;
-        }
-
-        &.active {
-
-          a {
+          &.active {
             color: $gold;
           }
-
         }
+
 
         &:hover {
 
