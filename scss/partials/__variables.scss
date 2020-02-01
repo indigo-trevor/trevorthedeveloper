@@ -1,0 +1,15 @@
+$breakpoint-xs: 550px;
+$breakpoint-s: 768px;
+$breakpoint-m: 992px;
+$breakpoint-l: 1200px;
+
+$XS: 'min-width:'+ $breakpoint-xs;
+$S: 'min-width:'+ $breakpoint-s;
+$M: 'min-width:'+ $breakpoint-m;
+$L: 'min-width:'+ $breakpoint-l;
+
+$white: #ffffff;
+$green: #237b02;
+$gold: #b39d5a;
+$lightGrey: #fafafa;
+$black: #474747;

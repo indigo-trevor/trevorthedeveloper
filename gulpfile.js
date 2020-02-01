@@ -8,24 +8,33 @@ const gulp = require('gulp'),
 	uglify = require('gulp-uglify');
 
 const paths = {
-	js: ['js/*', 'js/*/*'],
-	css: ['css/**/*.scss'],
+	jsCustom: ['js/custom/*', 'js/custom/*/*'],
+	jsVendor: ['js/vendor/*', 'js/vendor/*/*'],
+	scss: ['scss/**/*.scss'],
 	img: ['img/*', 'img/*/*'],
-	fonts: ['css/fonts/*', 'css/fonts/*/*'],
+	fonts: ['fonts/*', 'css/fonts/*/*'],
 	html: ['index.html']
 }
 
-gulp.task('css', function() {
-  return gulp.src('css/styles.scss')
+gulp.task('scss', function() {
+  return gulp.src('scss/styles.scss')
     .pipe(sass().on('error', sass.logError))
 		.pipe(cleanCSS({debug: true}))
-    .pipe(gulp.dest('docs/css'))
+    .pipe(gulp.dest('docs/scss'))
 		.pipe(connect.reload());
 });
 
-gulp.task('js', function () {
-	return gulp.src(paths.js)
-	.pipe(concat('bundle.js'))
+gulp.task('jsCustom', function () {
+	return gulp.src(paths.jsCustom)
+	.pipe(concat('custom.js'))
+	.pipe(uglify({mangle:true}))
+	.pipe(gulp.dest('docs'))
+	.pipe(connect.reload());
+});
+
+gulp.task('jsVendor', function () {
+	return gulp.src(paths.jsVendor)
+	.pipe(concat('vendor.js'))
 	.pipe(uglify({mangle:true}))
 	.pipe(gulp.dest('docs'))
 	.pipe(connect.reload());
@@ -33,7 +42,7 @@ gulp.task('js', function () {
 
 gulp.task('fonts', function(){
 	gulp.src(paths.fonts)
-	.pipe(gulp.dest('docs/css/fonts'))
+	.pipe(gulp.dest('docs/scss/fonts'))
 });
 
 gulp.task('clean', function() {
@@ -42,8 +51,9 @@ gulp.task('clean', function() {
 });
 
 gulp.task('watch', function() {
-  	gulp.watch(paths.js, ['js']);
-  	gulp.watch(paths.css, ['css']);
+  	gulp.watch(paths.jsCustom, ['jsCustom']);
+		gulp.watch(paths.jsVendor, ['jsVendor']);
+  	gulp.watch(paths.scss, ['scss']);
   	gulp.watch(paths.html, ['html']);
   	gulp.watch(paths.img, ['images']);
 });
@@ -75,4 +85,4 @@ gulp.task('serve', function(){
 	})
 });
 
-gulp.task('start', ['serve','watch', 'html', 'css', 'js', 'images', 'fonts']);
+gulp.task('start', ['serve','watch', 'html', 'scss', 'jsCustom', 'jsVendor', 'images', 'fonts']);
