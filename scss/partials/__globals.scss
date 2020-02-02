@@ -174,9 +174,13 @@
   position: relative;
   text-align: center;
   border: 1px solid $gold;
-  margin-top: 1em;
+  margin-top: 30px;
   background-color: $white;
   overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    margin-top: 15px;
+  }
 
   &__inner {
     position: relative;
@@ -300,6 +304,36 @@
     width: 100%;
     margin-top: 1.5em;
   }
+
+  &--connect {
+
+    p {
+      margin-bottom: 25px;
+    }
+    a {
+      text-decoration: none;
+      margin-right: 5px;
+
+      svg {
+        width: 35px;
+        height: 35px;
+        fill: $gold;
+        border-radius: 6px;
+        transition: all 250ms ease;
+      }
+
+      &:hover {
+
+        svg {
+          fill: darken($gold, 10%);
+        }
+
+      }
+
+    }
+
+  }
+
 }
 
 footer {
