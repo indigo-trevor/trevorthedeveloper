@@ -1,7 +1,42 @@
+
+.content-wrapper {
+  position: relative;
+
+  &:after {
+    z-index: 11;
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: all 250ms ease;
+    visibility: hidden;
+  }
+
+  &.modal-is-active {
+
+    &:after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      visibility: visible;
+      background-color: rgba($black, 0.75);
+    }
+
+  }
+
+}
+
 .section {
   position: relative;
   background-color: $lightGrey;
   overflow: hidden;
+
 
   &--hero {
     height: 100vh;
@@ -153,6 +188,11 @@
       background-image: url(../img/digital-transformation.gif);
     }
 
+    &--worldofthefuture {
+      background-position: 30% 50%;
+      background-image: url(../img/worldofthefuture.gif);
+    }
+
   }
 
 
@@ -183,15 +223,11 @@
     transform: translateY(100%);
   }
 
-  &--work {
-    cursor: pointer;
-  }
-
   &:hover {
 
     .card__bg {
-      filter: brightness(75%) blur(3px);
-      -webkit-filter: brightness(75%) blur(3px);
+      filter: brightness(75%) blur(2px);
+      -webkit-filter: brightness(75%) blur(2px);
     }
 
     .card__header {
@@ -200,15 +236,6 @@
 
     .card__learnmore {
       transform: translateY(0%);
-
-      .learn-more {
-
-        svg {
-          transform: translateX(8px);
-        }
-
-      }
-
     }
 
   }

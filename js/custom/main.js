@@ -32,24 +32,70 @@ $(document).ready(function() {
 
 // START: Carousel modals
 
-// or objects
-  $(".card--work--digital-transformation").on('click', function(){
+  // Digital Transformation
+  $(".learn-more--digital-transformation").on('click', function(){
       Strip.show([
         {
           url: 'img/digital-transformation-1.jpg',
-          options: {
-            side: 'right'
-          },
-          caption: 'Interactive website build built for Microsoft showcasing 8 real-world digital transformation lessons.'
+          caption: 'Interactive website ideated, designed and coded for Microsoft client'
         },
         {
-          url: 'img/trevor-zen.jpg',
-          options: {
-            side: 'right'
-          },
-          caption: 'Caption for this image'
+          url: 'img/digital-transformation-2.jpg',
+          caption: 'Technologies utilized: Vue.js, WordPress, Anime.js, Babylon.js'
         },
-      ]);
+        {
+          url: 'img/digital-transformation-3.jpg',
+          caption: 'Showcasing 8 real-world digital transformation lessons'
+        },
+        {
+          url: 'img/digital-transformation-4.jpg',
+          caption: 'Mixed media approach including 3D and 2D assets'
+        },
+        {
+          url: 'img/digital-transformation-5.jpg',
+          caption: 'Fully repsonsive from Mobile on up and cross-browser optimized'
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
+  });
+
+  // VMware - World of the future
+  $(".learn-more--worldofthefuture").on('click', function(){
+      Strip.show([
+        {
+          url: 'img/worldofthefuture-1.jpg',
+          caption: 'Responsive web experience created for VMware client, showing how VMware is utilizing IoT to transform industries ranging from supply chain, proactive transportation, maritime, surveillance & more.'
+        },
+        {
+          url: 'img/worldofthefuture-2.jpg',
+          caption: 'Technologies utilized: Vue.js, Lottie.js, Anime.js'
+        },
+        {
+          url: 'img/worldofthefuture-3.jpg',
+          caption: 'Showcasing 8 real-world digital transformation lessons'
+        },
+        {
+          url: 'img/worldofthefuture-4.jpg',
+          caption: 'Mixed media approach including 3D and 2D assets'
+        },
+        {
+          url: 'img/worldofthefuture-5.jpg',
+          caption: 'Fully repsonsive from Mobile on up and cross-browser optimized'
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
   });
 
 // END: Carousel modals

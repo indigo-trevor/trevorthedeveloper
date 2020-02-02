@@ -1,11 +1,46 @@
 a {
+  position: relative;
   color: $gold;
   transition: all 250ms ease;
   text-decoration: none;
 
+  span {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 0%;
+    height: 1px;
+    background-color: $gold;
+    transition: all 250ms ease;
+  }
+
   &:hover {
     color: darken($gold, 10%);
+
+    span {
+      width: 100%;
+    }
+
   }
+
+  &.live-site {
+    position: relative;
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+
+    &:hover {
+      color: darken($white, 5%);
+
+      svg {
+        transform: translateX(5px);
+        color: darken($white, 5%);
+      }
+
+    }
+
+  }
+
 
 }
 
@@ -21,22 +56,33 @@ button {
     background-color: darken($gold, 10%);
   }
 
+  &:active,
+  &:focus {
+    outline-color: darken($gold, 10%);
+  }
+
   &.learn-more {
-    background-color: transparent;
-    padding: 0 0;
+    position: relative;
 
-    svg {
-      transition: all 250ms ease;
-      position: relative;
-      width: 15px;
-      height: 14px;
-      vertical-align: middle;
-      transform: translateX(0px);
-    }
+    &--live {
+      background-color: transparent;
+      padding: 0 0;
+      font-size: 12px;
 
-    &:active,
-    &:focus {
-      outline: none;
+      svg {
+        transition: all 250ms ease;
+        position: relative;
+        width: 10px;
+        height: 9px;
+        vertical-align: middle;
+        transform: translateX(2px);
+      }
+
+      &:active,
+      &:focus {
+        outline: none;
+      }
+
     }
 
   }
