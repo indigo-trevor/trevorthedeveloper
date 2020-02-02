@@ -150,8 +150,20 @@
           color: $black;
           text-decoration: none;
           position: relative;
+          span {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 0%;
+            height: 1px;
+            background-color: $gold;
+            transition: all 250ms ease;
+          }
           &.active {
             color: $gold;
+            span {
+              width: 100%;
+            }
           }
         }
 

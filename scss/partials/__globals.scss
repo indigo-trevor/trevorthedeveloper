@@ -88,6 +88,20 @@
       background-size: 139px 87px, 139px 87px;
       padding: 100px 0 0 0;
     }
+
+    .card__inner {
+      padding: 4em 4em;
+
+      @include media-breakpoint-down(lg) {
+        padding: 3em 3em;
+      }
+
+      @include media-breakpoint-down(md) {
+        padding: 1em 1em;
+      }
+
+    }
+
   }
 
   &--work {
@@ -193,8 +207,40 @@
       background-image: url(../img/worldofthefuture.gif);
     }
 
+    &--buildingwithai {
+      background-image: url(../img/buildingwithai.gif);
+    }
+
+    &--pinballlizard {
+      background-image: url(../img/pinballlizard.gif);
+    }
+
   }
 
+
+  &__awards-container {
+
+    .award {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 55px;
+      z-index: 9;
+
+      a {
+        text-decoration: none;
+
+        img {
+          position: relative;
+          display: block;
+          width: 55px;
+        }
+
+      }
+
+    }
+
+  }
 
   &__header {
     position: absolute;
