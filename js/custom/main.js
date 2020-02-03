@@ -182,5 +182,38 @@ $(document).ready(function() {
       });
   });
 
+  // Alpha Universe
+  $(".learn-more--alphauniverse").on('click', function(){
+      Strip.show([
+        {
+          url: 'img/alphauniverse-1.jpg',
+          caption: 'Sony Alpha Universe is a social networking community of industry-leading photographers. We designed, developed and maintained the website for the past 2 years'
+        },
+        {
+          url: 'img/alphauniverse-4.jpg',
+          caption: 'We assisted Sony in the ideation, creation and execution of many specific campaigns and promotions including the Be Alpha campaign'
+        },
+        {
+          url: 'img/alphauniverse-2.jpg',
+          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), Angular.js, Zesty (CMS)'
+        },
+        {
+          url: 'img/alphauniverse-5.jpg',
+          caption: 'Fully responsive website that is optimized for Mobile, Tablet and Desktop use'
+        },
+        {
+          url: 'img/alphauniverse-3.jpg',
+          caption: 'We continuously aimed to optimize and improve the platform, working around numerous technological constraints'
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
+  });
+
 // END: Carousel modals
 });
