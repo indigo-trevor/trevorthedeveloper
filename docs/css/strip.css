@@ -68,6 +68,9 @@
   margin: 0 !important;
   min-width: 0 !important;
   min-height: 0 !important;
+	-webkit-box-shadow: -10px 0px 18px -8px rgba(105,105,105,1);
+		-moz-box-shadow: -10px 0px 18px -8px rgba(105,105,105,1);
+			box-shadow: -10px 0px 18px -8px rgba(105,105,105,1);
 }
 
 .strp-pages {
@@ -155,12 +158,13 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  color: #efefef;
-  font-size: 13px;
-  line-height: 20px;
-  background: #474747;
+  color: #000;
+  font-size: 16px;
+  line-height: 22px;
+  background: #fff;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
+	border: 1px solid #b39d5a;
 }
 
 .strp-info-padder {
@@ -178,7 +182,7 @@
 }
 
 .strp-position {
-  color: #ffffff;
+  color: #474747;
   float: right;
   line-height: 21px;
   opacity: 0.99;
@@ -267,11 +271,12 @@
 }
 
 .strp-close-background {
-  filter: alpha(opacity=80);
-  opacity: .8;
-  background-color: #474747;
+
+  opacity: 1;
+  background-color: #b39d5a;
+	transition: all 250ms ease;
 }
-.strp-close:hover .strp-close-background { background-color: #161616; }
+.strp-close:hover .strp-close-background { background-color: #958145; }
 
 
 .strp-has-error .strp-container { background-color: #ca3434; }

@@ -55,7 +55,7 @@ $(document).ready(function() {
         },
         {
           url: 'img/digital-transformation-2.jpg',
-          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), Vue.js, Anime.js, Babylon.js'
+          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), SCSS, Webpack, Vue.js, Anime.js, Babylon.js'
         },
         {
           url: 'img/digital-transformation-3.jpg',
@@ -100,7 +100,7 @@ $(document).ready(function() {
         },
         {
           url: 'img/worldofthefuture-3.jpg',
-          caption: 'Technologies utilized: HTML5, CSS3, JavaScript(ES6), Vue.js, Lottie.js, Anime.js'
+          caption: 'Technologies utilized: HTML5, CSS3, JavaScript(ES6), SCSS, Webpack, Vue.js, Lottie.js, Anime.js'
         }
       ], {
         afterPosition: function(position) {
@@ -121,7 +121,7 @@ $(document).ready(function() {
         },
         {
           url: 'img/buildingwithai-5.jpg',
-          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), Vue.js, Babylon.js, Blender'
+          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), SCSS, Webpack, Vue.js, Babylon.js, Blender'
         },
         {
           url: 'img/buildingwithai-2.jpg',
@@ -195,7 +195,7 @@ $(document).ready(function() {
         },
         {
           url: 'img/alphauniverse-2.jpg',
-          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), Angular.js, Zesty (CMS)'
+          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), SCSS, Webpack, Angular.js, Zesty (CMS)'
         },
         {
           url: 'img/alphauniverse-5.jpg',
@@ -232,7 +232,7 @@ $(document).ready(function() {
         },
         {
           url: 'img/concurguideddemo-5.jpg',
-          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), Vue.js, Greensock.js (GSAP)'
+          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), Webpack, SCSS, Vue.js, Greensock.js (GSAP)'
         },
         {
           url: 'img/concurguideddemo-4.jpg',
@@ -270,6 +270,43 @@ $(document).ready(function() {
         {
           url: 'img/ar-4.jpg',
           caption: 'Technologies utilized: Unity game engine.'
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
+  });
+
+  // Workpalce Insights
+  $(".learn-more--workplaceinsights").on('click', function(){
+      Strip.show([
+        {
+          url: 'img/workplaceinsights-1.jpg',
+          caption: 'Thought leadership blog website created for Microsoft client.  Complete custom design along will fully functional CMS infrastructure.  Architected, built and maintained prioritizing the use componentized templates and blocks so the client has complete flexibility with content and design.'
+        },
+        {
+          url: 'img/workplaceinsights-2.jpg',
+          caption: 'Continuously working with the client to create custom assets within the site.  Including custom articles, videos and thought leadership pieces.'
+        },
+        {
+          url: 'img/workplaceinsights-3.jpg',
+          caption: 'Continuously monitoring and improving the performance of the site based on Analytic reporting, SEO and user testing.'
+        },
+        {
+          url: 'img/workplaceinsights-4.jpg',
+          caption: 'Technologies utilized: HTML5, CSS3, ES6 (JavaScript), Webpack, SCSS, WordPress, Adobe Analytics, Vue.js, Particles.js.'
+        },
+        {
+          url: 'img/workplaceinsights-5.jpg',
+          caption: 'The site was created to be fully responsive from mobile, tablet, desktop-up'
+        },
+        {
+          url: 'img/workplaceinsights-6.jpg',
+          caption: 'We also charge Demand Gen efforts to help promote adoption of the site. '
         }
       ], {
         afterPosition: function(position) {
