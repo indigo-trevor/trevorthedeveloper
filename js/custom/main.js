@@ -215,5 +215,38 @@ $(document).ready(function() {
       });
   });
 
+  // Concur - Guided Demos
+  $(".learn-more--concurguideddemo").on('click', function(){
+      Strip.show([
+        {
+          url: 'img/concurguideddemo-1.jpg',
+          caption: 'Two interactive web-based guided demos showcasing users how to capture expenses from any device, submit an expense report to their manager, and learn what it looks like to approve a report using SAP Concur'
+        },
+        {
+          url: 'img/concurguideddemo-3.jpg',
+          caption: 'Created two seperate Guided Demos.  One showcasing Expense functionality.  One showcasing Invoicing functionality.'
+        },
+        {
+          url: 'img/concurguideddemo-2.jpg',
+          caption: 'Localized to over 25 markets globally.'
+        },
+        {
+          url: 'img/concurguideddemo-5.jpg',
+          caption: 'Technologies utilized: HTML5, CSS3, JavaScript (ES6), Vue.js, Greensock.js (GSAP)'
+        },
+        {
+          url: 'img/concurguideddemo-4.jpg',
+          caption: 'Fully responsive website that is optimized for Mobile, Tablet and Desktop use'
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
+  });
+
 // END: Carousel modals
 });
