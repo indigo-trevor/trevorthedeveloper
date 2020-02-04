@@ -248,5 +248,38 @@ $(document).ready(function() {
       });
   });
 
+  // AR Scavenger Hunt App
+  $(".learn-more--arscavengerhunt").on('click', function(){
+      Strip.show([
+        {
+          url: 'img/ar-5.jpg',
+          caption: 'Augmented Reality / Native Mobile app built for the Microsoft Data Insights Summit conference. Deployed in both the Apple Store and Google Play Store. '
+        },
+        {
+          url: 'img/ar-1.jpg',
+          caption: 'Created superheroes to represent featured Microsoft products for the Data Insights Summit. Product-focused superhero posters, with supporting AR hotspots, created a summit-wide scavenger hunt for attendees.'
+        },
+        {
+          url: 'img/ar-2.jpg',
+          caption: 'After downloading the app (from Apple or Google Play), attendees collected points by scanning hotspots. Each overlay included a short product message.'
+        },
+        {
+          url: 'img/ar-3.jpg',
+          caption: 'Data from the app was pulled into a Power BI dashboard which appeared as a live leaderboard in the community booth, where attendees could “cash in” their points to receive t-shirts and other promotional items.'
+        },
+        {
+          url: 'img/ar-4.jpg',
+          caption: 'Technologies utilized: Unity game engine.'
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
+  });
+
 // END: Carousel modals
 });
