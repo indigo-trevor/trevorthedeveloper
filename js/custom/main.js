@@ -281,7 +281,7 @@ $(document).ready(function() {
       });
   });
 
-  // Workpalce Insights
+  // Workplace Insights
   $(".learn-more--workplaceinsights").on('click', function(){
       Strip.show([
         {
@@ -318,5 +318,83 @@ $(document).ready(function() {
       });
   });
 
+  // Concur Travel made easy
+  $(".learn-more--travelmadeeasy").on('click', function(){
+      Strip.show([
+        {
+          url: 'img/travelmadeeasy-1.gif',
+          caption: 'Interactive website built for Concur that highlight their TripIt Pro offering.  Custom Design, Motion and Development.'
+        },
+        {
+          url: 'img/travelmadeeasy-2.jpg',
+          caption: 'Utlized mixed media including videos, vector graphics, high-res imagery and copy.'
+        },
+        {
+          url: 'img/travelmadeeasy-3.jpg',
+          caption: 'Implemented within Concurs custom Drupal platform.'
+        },
+        {
+          url: 'img/travelmadeeasy-4.jpg',
+          caption: 'Technologies utilized: HTML5, CSS3, ES6 (JavaScript), Gulp, SCSS, Drupal.'
+        },
+        {
+          url: 'img/travelmadeeasy-5.jpg',
+          caption: 'Several unique interactions and animations incorporated into the experience to give the user a sense of delight.'
+        },
+        {
+          url: 'img/travelmadeeasy-6.jpg',
+          caption: 'The site was created to be fully responsive from mobile, tablet, desktop-up.'
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
+  });
+
+  // Nintex Guided Tour
+  $(".learn-more--nintexguidedtrials").on('click', function(){
+      Strip.show([
+        {
+          url: 'img/nintexguidedtrial-1.jpg',
+          caption: 'An interactive click-through demo of the Nintex platform that strategically guides the user through various use-cases of the product.  Created with HTML5, CSS3, ES6 (JavaScript), Vue.js.'
+        },
+        {
+          url: 'img/nintexguidedtrial-2.jpg',
+          caption: 'Utilized high-res screen shots and screen-cap videos showing actual use of the platform.  We also created animated vignettes that showcase high-level functionality in an intuitive manor.'
+        },
+        {
+          url: 'img/nintexguidedtrial-3.jpg',
+          caption: 'Due to the componentized nature of this code, we can add scenarios within a couple of hours. '
+        }
+      ], {
+        afterPosition: function(position) {
+          $(".content-wrapper").removeClass("modal-is-active").addClass("modal-is-active");
+        },
+        afterHide: function() {
+          $(".content-wrapper").removeClass("modal-is-active");
+        }
+      });
+  });
+
 // END: Carousel modals
+
+// Add and remove scroll arrow
+$(function () {
+     var $win = $(window);
+
+     $win.scroll(function () {
+         if ($win.scrollTop() == 0)
+          $(".scroll-down").removeClass("is-removed");
+         else if ($win.scrollTop() >= 10) {
+            $(".scroll-down").addClass("is-removed");
+         }
+     });
+  });
+
+
+
 });
