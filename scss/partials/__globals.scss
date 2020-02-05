@@ -326,6 +326,61 @@
 
   }
 
+  &--work {
+
+    &--digital-transformation {
+
+      h3 {
+        color: $green;
+      }
+
+      .learn-more--live {
+        color: $green;
+
+        svg {
+          stroke: $green;
+        }
+
+      }
+
+    }
+
+    &--nintexguidedtrials {
+
+      h3 {
+        color: $green;
+      }
+
+      .learn-more--live {
+        color: $green;
+
+        svg {
+          stroke: $green;
+        }
+
+      }
+
+    }
+
+    &--travelmadeeasy {
+
+      h3 {
+        color: $green;
+      }
+
+      .learn-more--live {
+        color: $green;
+
+        svg {
+          stroke: $green;
+        }
+
+      }
+
+    }
+
+  }
+
 }
 
 .card-full {
