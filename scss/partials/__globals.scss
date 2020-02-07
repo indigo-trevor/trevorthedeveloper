@@ -205,6 +205,11 @@
 
   }
 
+  &__bg-border {
+    position: relative;
+    width: 100%;
+    border: 1px solid $gold;
+  }
   &__bg {
     background-repeat: no-repeat;
     background-position: 50% 50%;
@@ -283,17 +288,16 @@
   }
 
   &__header {
-    position: absolute;
+    position: relative;
     z-index: 9;
-    top: 0;
     left: 0;
     width: 100%;
-    padding: 2em 2em;
+    background-color: $lightGrey;
+    padding-bottom: .25em;
     transition: all 250ms ease;
-    transform: translateY(-100%);
 
-    h3 {
-      color: $white;
+    h5 {
+      color: $black;
     }
 
   }
@@ -301,12 +305,29 @@
   &__learnmore {
     position: absolute;
     z-index: 9;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    padding: 2em 2em 3em 2em;
+    height: 100%;
+    padding: 0 0;
     transition: all 250ms ease;
-    transform: translateY(100%);
+    transform: scale(0);
+
+    h3 {
+      margin-top: 0;
+    }
+
+    &--inner {
+      margin-top: 24px;
+      @include vertical-align();
+
+      button {
+        margin-top: 0;
+        margin-bottom: 1em;
+      }
+
+    }
+
   }
 
   &:hover {
@@ -321,64 +342,13 @@
     }
 
     .card__learnmore {
-      transform: translateY(0%);
+      transform: scale(1);
     }
 
   }
 
   &--work {
-
-    &--digital-transformation {
-
-      h3 {
-        color: $green;
-      }
-
-      .learn-more--live {
-        color: $green;
-
-        svg {
-          stroke: $green;
-        }
-
-      }
-
-    }
-
-    &--nintexguidedtrials {
-
-      h3 {
-        color: $green;
-      }
-
-      .learn-more--live {
-        color: $green;
-
-        svg {
-          stroke: $green;
-        }
-
-      }
-
-    }
-
-    &--travelmadeeasy {
-
-      h3 {
-        color: $green;
-      }
-
-      .learn-more--live {
-        color: $green;
-
-        svg {
-          stroke: $green;
-        }
-
-      }
-
-    }
-
+    border: none;
   }
 
 }
