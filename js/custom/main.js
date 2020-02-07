@@ -383,17 +383,17 @@ $(document).ready(function() {
 // END: Carousel modals
 
 // Add and remove scroll arrow
-$(function () {
-     var $win = $(window);
-
-     $win.scroll(function () {
-         if ($win.scrollTop() == 0)
-          $(".scroll-down").removeClass("is-removed");
-         else if ($win.scrollTop() >= 10) {
-            $(".scroll-down").addClass("is-removed");
-         }
-     });
-  });
+// $(function () {
+//      var $win = $(window);
+//
+//      $win.scroll(function () {
+//          if ($win.scrollTop() == 0)
+//           $(".scroll-down").removeClass("is-removed");
+//          else if ($win.scrollTop() >= 10) {
+//             $(".scroll-down").addClass("is-removed");
+//          }
+//      });
+//   });
 
 
 

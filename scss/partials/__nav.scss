@@ -1,4 +1,5 @@
 .nav-wrapper {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   background-color: rgba($lightGrey, .9);
@@ -126,6 +127,7 @@
       }
       &.is-active {
         @include media-breakpoint-down(md) {
+          z-index: 12;
           display: block;
           top: 55px;
           background-color: rgba($lightGrey, .95);
